@@ -13,7 +13,6 @@ public class InsertValueSearchDemo {
     }
 
     public static int insertValueSearch(int[] arr, int left, int right, int findValue) {
-        System.out.println("1");
         //如果小于第一个数和大于最后一个数也没必要查找
         if (left > right || findValue < arr[0] || findValue > arr[arr.length - 1]) {
             return -1;
