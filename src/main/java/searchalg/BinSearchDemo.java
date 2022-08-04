@@ -8,7 +8,7 @@ import java.util.List;
 public class BinSearchDemo {
     public static void main(String[] args) {
         int[] arr = {1, 8, 10, 18, 33, 33, 33, 33, 89, 100, 1234};
-        int index = binrarySearch(arr, 0, arr.length - 1, 8);
+        int index = binrarySearch(arr, 0, arr.length - 1, 33);
         System.out.println(index);
 
         List<Integer> arrList = binrarySearch2(arr, 0, arr.length - 1, 33);
@@ -17,9 +17,10 @@ public class BinSearchDemo {
 
     /**
      * 二分查找
-     * @param arr 数组
-     * @param left 左边的索引
-     * @param right 右边的索引
+     *
+     * @param arr       数组
+     * @param left      左边的索引
+     * @param right     右边的索引
      * @param findValue 要查找的值
      * @return int 如果找到了就返回下标，如果没找到就返回-1  4 6
      */
@@ -37,7 +38,7 @@ public class BinSearchDemo {
         //如果不间值小于要找到的，（那么要向数组的后面继续找 这时
         //下一次查找的 left + 1开始到right结束
         if (midValue < findValue) {
-            return binrarySearch(arr, left + 1, right, findValue);
+            return binrarySearch(arr, mid + 1, right, findValue);
         } else if (midValue > findValue) {
             //如果要找的数小于中间件 表示要向左找
             //那么下一轮开始的位置就是
@@ -71,7 +72,7 @@ public class BinSearchDemo {
             List<Integer> arrList = new ArrayList<>();
             int temp = mid - 1;
             //先向左找
-            while(true) {
+            while (true) {
                 if (temp < 0 || arr[temp] != findValue) {
                     break;
                 }
@@ -81,7 +82,7 @@ public class BinSearchDemo {
             arrList.add(mid);
             temp = mid + 1;
             //再向右找
-            while(true) {
+            while (true) {
                 if (temp > arr.length - 1 || arr[temp] != findValue) {
                     break;
                 }
