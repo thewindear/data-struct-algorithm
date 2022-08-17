@@ -46,6 +46,7 @@ class VisitedVertex {
         this.preVisited = new int[length];
         this.dis = new int[length];
         //初始化dis全部填充为65535
+        //出发顶点到其他顶点默认为最大距离65535，然后会逐步更新
         Arrays.fill(this.dis, 65535);
         this.alreadyArr[index] = 1;
         //设置出发顶点的访问距离为0
